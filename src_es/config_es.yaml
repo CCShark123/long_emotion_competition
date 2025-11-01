@@ -1,0 +1,24 @@
+es:
+  use_rag: true
+  chunk_tokens: 128
+  overlap_tokens: 20
+  retriever_topk: 4
+  use_vector_store: true
+  index_path: ./indexes/es/faiss.index
+  store_path: ./indexes/es/store.jsonl
+  embed_model: BAAI/bge-m3
+  normalize: true
+
+llm:
+  endpoint: http://127.0.0.1:8000/generate
+  model: Qwen2.5-7B-Instruct
+  max_new_tokens: 512
+  temperature: 0.4
+  top_p: 0.9
+
+per_field_queries:
+  predicted_cause: "成因/诱因/触发事件/关系与工作变动/童年经历/疾病相关"
+  predicted_symptoms: "主诉与伴随症状：情绪/躯体/睡眠/认知行为"
+  predicted_treatment_process: "干预过程：评估-技术-作业-随访-家庭参与"
+  predicted_illness_Characteristics: "病程特征：起病/波动/诱因-维持/风险保护"
+  predicted_treatment_effect: "阶段性疗效/主观负荷/功能改善/复发或巩固"
